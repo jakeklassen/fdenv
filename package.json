@@ -1,5 +1,5 @@
 {
-  "name": "envr",
+  "name": "fdenv",
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
@@ -9,13 +9,13 @@
     "dist"
   ],
   "bin": {
-    "envr": "./bin/envr.js"
+    "fdenv": "./bin/fdenv.js"
   },
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "dev": "cross-env DEBUG=envr:* esno ./src/cli.ts",
-    "glob": "cross-env DEBUG=envr:* esno ./src/glob.ts",
+    "dev": "cross-env DEBUG=fdenv:* esno ./src/cli.ts",
+    "glob": "cross-env DEBUG=fdenv:* esno ./src/glob.ts",
     "build": "rimraf dist && tsup ./src/index.ts ./src/cli.ts --dts --format esm,cjs",
     "test": "vitest"
   },
@@ -24,16 +24,16 @@
   "devDependencies": {
     "@types/node": "^17.0.23",
     "@types/yargs": "^17.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.16.0",
-    "@typescript-eslint/parser": "^5.16.0",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
     "cross-env": "^7.0.3",
-    "eslint": "^8.11.0",
+    "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "esno": "^0.14.1",
     "rimraf": "^3.0.2",
-    "tsup": "^5.12.1",
+    "tsup": "^5.12.2",
     "typescript": "^4.6.3",
-    "vitest": "^0.7.11"
+    "vitest": "^0.8.2"
   },
   "dependencies": {
     "execa": "^6.1.0",

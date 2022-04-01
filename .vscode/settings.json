@@ -1,5 +1,19 @@
 {
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "cSpell.words": [
+    "eslintcache",
+    "esno",
+    "execa",
+    "fdenv",
+    "globstar",
+    "Klassen",
+    "nuxt",
+    "picocolors",
+    "stylelintcache",
+    "tsup",
+    "vitest",
+    "vuepress"
+  ]
 }

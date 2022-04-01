@@ -1,8 +1,12 @@
 export interface CommonOptions {
-  recursive?: boolean;
+  /**
+   * Append string to variable output (e.g. '=')
+   * @default ""
+   */
+  append?: string;
 
   /**
    * @default '.'
    */
-  path?: string;
+  cwd?: string;
 }

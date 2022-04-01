@@ -1,34 +1,45 @@
 import type { Argv } from "yargs";
 import yargs from "yargs";
-import pc from "picocolors";
+import { crawl } from "./glob";
 import { CommonOptions } from "./types";
 
 function commonOptions(
   args: Argv<Record<string, unknown>>,
 ): Argv<CommonOptions> {
   return args
-    .option("recursive", {
-      alias: "r",
-      type: "boolean",
-      default: false,
-      description: "Recursively search directories",
+    .option("append", {
+      alias: "a",
+      type: "string",
+      default: "",
+      description: "Append string to variable output (e.g. '=')",
     })
-    .option("path", {
-      alias: "p",
+    .option("cwd", {
+      alias: "c",
       type: "string",
       default: ".",
       description: "Path to search",
     });
 }
 
-yargs
-  .scriptName("envr")
+const args = yargs
+  .scriptName("fdenv")
   .usage("$0 [args]")
-  .command("hello", "say hello", commonOptions, (args) => {
-    console.log(args);
-    console.log(pc.green("hello 👋"));
-  })
+  .command("$0", "", commonOptions)
   .showHelpOnFail(false)
   .alias("h", "help")
   .alias("v", "version")
-  .help().argv;
+  .help()
+  .parseSync();
+
+crawl({ cwd: args.cwd })
+  .then((results) => {
+    const { append } = args;
+
+    console.log(
+      results
+        .sort()
+        .map((env) => `${env}${append}`)
+        .join("\n"),
+    );
+  })
+  .catch(console.error);
