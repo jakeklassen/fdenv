@@ -1,6 +1,6 @@
 {
-  "name": "fdenv",
-  "version": "0.1.0",
+  "name": "@jakeklassen/fdenv",
+  "version": "0.0.0",
   "description": "Find environment variables",
   "type": "module",
   "main": "dist/index.js",
@@ -12,32 +12,8 @@
   "bin": {
     "fdenv": "./bin/fdenv.js"
   },
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "dev": "cross-env DEBUG=fdenv:* esmo ./src/cli.ts",
-    "build": "rimraf dist && tsup ./src/index.ts ./src/cli.ts ./src/glob.ts --dts --format esm",
-    "release": "pnpx bumpp --commit --tag && pnpm build && esmo ./scripts/prepublish.ts && pnpm publish --no-git-checks && esmo ./scripts/postpublish.ts && git push",
-    "test": "vitest"
-  },
   "author": "Jake Klassen",
   "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^17.0.23",
-    "@types/yargs": "^17.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
-    "@typescript-eslint/parser": "^5.17.0",
-    "bumpp": "^7.1.1",
-    "cross-env": "^7.0.3",
-    "eslint": "^8.12.0",
-    "eslint-config-prettier": "^8.5.0",
-    "esno": "^0.14.1",
-    "rimraf": "^3.0.2",
-    "tsup": "^5.12.4",
-    "typescript": "^4.6.3",
-    "vitest": "^0.8.4"
-  },
   "dependencies": {
     "esm": "^3.2.25",
     "execa": "^6.1.0",
