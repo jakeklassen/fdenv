@@ -1,6 +1,6 @@
 {
   "name": "fdenv",
-  "version": "0.2.2",
+  "version": "0.0.0",
   "description": "Find environment variables",
   "type": "module",
   "main": "dist/index.js",
@@ -16,7 +16,7 @@
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "dev": "cross-env DEBUG=fdenv:* esno ./src/cli.ts",
+    "dev": "cross-env DEBUG=fdenv:* esmo ./src/cli.ts",
     "build": "rimraf dist && tsup ./src/index.ts ./src/cli.ts ./src/glob.ts --dts --format esm",
     "release": "pnpx bumpp --commit --tag && pnpm build && esmo ./scripts/prepublish.ts && pnpm publish --no-git-checks && esmo ./scripts/postpublish.ts && git push",
     "test": "vitest"
