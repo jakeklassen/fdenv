@@ -1,3 +1,4 @@
+import { oraPromise } from "ora";
 import type { Argv } from "yargs";
 import yargs from "yargs";
 import { crawl } from "./glob";
@@ -21,7 +22,7 @@ function commonOptions(
     });
 }
 
-const args = yargs
+const args = yargs(process.argv.slice(2))
   .scriptName("fdenv")
   .usage("$0 [args]")
   .command("$0", "", commonOptions)
@@ -31,7 +32,9 @@ const args = yargs
   .help()
   .parseSync();
 
-crawl({ cwd: args.cwd })
+oraPromise(crawl({ cwd: args.cwd }), {
+  text: "Searching for variables...",
+})
   .then((results) => {
     const { append } = args;
 
