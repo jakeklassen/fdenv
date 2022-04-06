@@ -49,7 +49,6 @@
   },
   "dependencies": {
     "esm": "^3.2.25",
-    "execa": "^6.1.0",
     "fast-glob": "^3.2.11",
     "ora": "^6.1.0",
     "picocolors": "^1.0.0",

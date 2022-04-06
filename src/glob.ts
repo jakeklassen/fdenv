@@ -1,5 +1,6 @@
-import { execa } from "execa";
 import glob from "fast-glob";
+import { createReadStream } from "fs";
+import readline from "node:readline";
 import { CommonOptions } from "./types";
 
 export const crawl = async ({ cwd = process.cwd() }: CommonOptions) => {
@@ -34,27 +35,30 @@ export const crawl = async ({ cwd = process.cwd() }: CommonOptions) => {
       "**/node_modules/**",
       "**/out/**",
     ].map((pattern) => pattern.replace(/\/$/, "")),
-  }).then((files) =>
-    execa("grep", ["-roPh", "-e", "process\\.env\\.\\K[0-9a-zA-Z_]*", ...files])
-      .then((result) => {
-        const { stdout } = result;
+  }).then(async (files) => {
+    const variables = new Set<string>();
+    const regex = /process\.env\.(?<env>[0-9a-zA-Z_]*)/gim;
 
-        return Array.from(new Set<string>(stdout.split("\n"))).filter(
-          (variable) => variable.trim().length > 0,
-        );
-      })
-      .catch((error) => {
-        // EXIT STATUS Normally the exit status is 0 if a line is selected,
-        // 1 if no lines were selected, and 2 if an error occurred.
-        if (error.exitCode === 1) {
-          const { stdout } = error;
+    for (const file of files) {
+      await new Promise((resolve) => {
+        readline
+          .createInterface({
+            input: createReadStream(file),
+            terminal: false,
+          })
+          .on("line", (line) => {
+            const matches = [...line.matchAll(regex)]
+              .map((match) => match.groups?.env)
+              .filter((match): match is string => match != null);
 
-          return Array.from(new Set<string>(stdout.split("\n"))).filter(
-            (variable) => variable.trim().length > 0,
-          );
-        }
+            for (const match of matches) {
+              variables.add(match);
+            }
+          })
+          .on("close", resolve);
+      });
+    }
 
-        throw error;
-      }),
-  );
+    return Array.from(variables);
+  });
 };
