@@ -13,9 +13,6 @@
   },
   "homepage": "https://github.com/jakeklassen/fdenv#readme",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -27,7 +24,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "dev": "cross-env DEBUG=fdenv:* esmo ./src/cli.ts",
-    "build": "rimraf dist && tsup ./src/index.ts ./src/cli.ts ./src/glob.ts --dts --format esm",
+    "build": "rimraf dist && tsup ./src/cli.ts ./src/glob.ts --dts --format esm",
     "release": "pnpx bumpp --commit --tag && pnpm build && esmo ./scripts/prepublish.ts && pnpm publish --access public --no-git-checks && esmo ./scripts/postpublish.ts && git push",
     "test": "vitest"
   },
