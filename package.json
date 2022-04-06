@@ -2,6 +2,16 @@
   "name": "@jakeklassen/fdenv",
   "version": "0.1.2",
   "description": "Find environment variables",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/jakeklassen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakeklassen/fdenv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jakeklassen/fdenv/issues"
+  },
+  "homepage": "https://github.com/jakeklassen/fdenv#readme",
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
@@ -22,7 +32,6 @@
     "test": "vitest"
   },
   "author": "Jake Klassen",
-  "license": "ISC",
   "devDependencies": {
     "@types/node": "^17.0.23",
     "@types/yargs": "^17.0.10",

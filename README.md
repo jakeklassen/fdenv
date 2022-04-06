@@ -11,10 +11,3 @@ npx @jakeklassen/fdenv -c /home/user/workspace
 # Find all environment variables, write to file
 npx @jakeklassen/fdenv -a '=' -c /home/user/workspace/project > /home/user/workspace/project.env
 ```
-
-## Todo
-
-Trying mutlithreading:
-
-- [tinypool](https://github.com/tinylibs/tinypool)
-- [piscina](https://github.com/piscinajs/piscina)
