@@ -1,6 +1,7 @@
 import { oraPromise } from "ora";
 import type { Argv } from "yargs";
 import yargs from "yargs";
+import pkg from "../package.json";
 import { crawl } from "./glob";
 import { CommonOptions } from "./types";
 
@@ -27,6 +28,7 @@ const args = yargs(process.argv.slice(2))
   .usage("$0 [args]")
   .command("$0", "", commonOptions)
   .showHelpOnFail(false)
+  .version(pkg.version)
   .alias("h", "help")
   .alias("v", "version")
   .help()
