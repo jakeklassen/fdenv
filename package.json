@@ -1,6 +1,6 @@
 {
   "name": "@jakeklassen/fdenv",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Find environment variables",
   "license": "MIT",
   "funding": "https://github.com/sponsors/jakeklassen",
