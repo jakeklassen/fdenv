@@ -1,8 +1,18 @@
 {
   "name": "@jakeklassen/fdenv",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Find environment variables",
   "license": "MIT",
+  "keywords": [
+    "node",
+    "env",
+    "environment",
+    "find",
+    "process",
+    "process.env",
+    "variable",
+    "variabls"
+  ],
   "funding": "https://github.com/sponsors/jakeklassen",
   "repository": {
     "type": "git",
@@ -31,19 +41,19 @@
   },
   "author": "Jake Klassen",
   "devDependencies": {
-    "@types/node": "^17.0.25",
+    "@types/node": "^17.0.31",
     "@types/yargs": "^17.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.20.0",
-    "@typescript-eslint/parser": "^5.20.0",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
     "bumpp": "^7.1.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.13.0",
+    "eslint": "^8.14.0",
     "eslint-config-prettier": "^8.5.0",
     "esno": "^0.14.1",
     "rimraf": "^3.0.2",
-    "tsup": "^5.12.5",
-    "typescript": "^4.6.3",
-    "vitest": "^0.9.3"
+    "tsup": "^5.12.6",
+    "typescript": "^4.6.4",
+    "vitest": "^0.10.2"
   },
   "dependencies": {
     "esm": "^3.2.25",
