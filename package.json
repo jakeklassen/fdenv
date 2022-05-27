@@ -34,32 +34,32 @@
     "preinstall": "npx only-allow pnpm",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "dev": "cross-env DEBUG=fdenv:* esmo ./src/cli.ts",
+    "dev": "cross-env DEBUG=fdenv:* esno ./src/cli.ts",
     "build": "rimraf dist && tsup ./src/cli.ts ./src/glob.ts --dts --format esm",
-    "release": "pnpx bumpp --commit --tag && pnpm build && esmo ./scripts/prepublish.ts && pnpm publish --access public --no-git-checks && esmo ./scripts/postpublish.ts && git push",
+    "release": "pnpx bumpp --commit --tag && pnpm build && esno ./scripts/prepublish.ts && pnpm publish --access public --no-git-checks && esno ./scripts/postpublish.ts && git push",
     "test": "vitest"
   },
   "author": "Jake Klassen",
   "devDependencies": {
-    "@types/node": "^17.0.31",
+    "@types/node": "^17.0.35",
     "@types/yargs": "^17.0.10",
-    "@typescript-eslint/eslint-plugin": "^5.22.0",
-    "@typescript-eslint/parser": "^5.22.0",
+    "@typescript-eslint/eslint-plugin": "^5.26.0",
+    "@typescript-eslint/parser": "^5.26.0",
     "bumpp": "^7.1.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.14.0",
+    "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
-    "esno": "^0.14.1",
+    "esno": "^0.16.3",
     "rimraf": "^3.0.2",
-    "tsup": "^5.12.6",
-    "typescript": "^4.6.4",
-    "vitest": "^0.10.2"
+    "tsup": "^6.0.1",
+    "typescript": "^4.7.2",
+    "vitest": "^0.12.9"
   },
   "dependencies": {
     "esm": "^3.2.25",
     "fast-glob": "^3.2.11",
     "ora": "^6.1.0",
     "picocolors": "^1.0.0",
-    "yargs": "^17.4.1"
+    "yargs": "^17.5.1"
   }
 }
