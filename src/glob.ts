@@ -1,5 +1,5 @@
 import glob from "fast-glob";
-import { createReadStream } from "fs";
+import { createReadStream } from "node:fs";
 import readline from "node:readline";
 import { CommonOptions } from "./types";
 
