@@ -43,8 +43,8 @@
   "devDependencies": {
     "@types/node": "^18.11.18",
     "@types/yargs": "^17.0.19",
-    "@typescript-eslint/eslint-plugin": "^5.48.0",
-    "@typescript-eslint/parser": "^5.48.0",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
     "bumpp": "^8.2.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.31.0",
