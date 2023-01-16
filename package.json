@@ -47,13 +47,13 @@
     "@typescript-eslint/parser": "^5.48.1",
     "bumpp": "^8.2.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.31.0",
+    "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "esno": "^0.16.3",
-    "rimraf": "^3.0.2",
+    "rimraf": "^4.0.7",
     "tsup": "^6.5.0",
     "typescript": "^4.9.4",
-    "vitest": "^0.27.0"
+    "vitest": "^0.27.1"
   },
   "dependencies": {
     "esm": "^3.2.25",
