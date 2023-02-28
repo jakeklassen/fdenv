@@ -11,6 +11,7 @@ export const crawl = async ({ cwd = process.cwd() }: CommonOptions) => {
     dot: true,
     globstar: true,
     absolute: true,
+    suppressErrors: true,
     ignore: [
       "**/*.d.ts/**",
       "**/*.log/**",
