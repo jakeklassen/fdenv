@@ -1,6 +1,7 @@
 import { oraPromise } from "ora";
 import type { Argv } from "yargs";
 import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 import pkg from "../package.json";
 import { crawl } from "./glob";
 import { CommonOptions } from "./types";
@@ -23,7 +24,7 @@ function commonOptions(
     });
 }
 
-const args = yargs(process.argv.slice(2))
+const args = yargs(hideBin(process.argv))
   .scriptName("fdenv")
   .usage("$0 [args]")
   .command("$0", "", commonOptions)
