@@ -41,19 +41,19 @@
   },
   "author": "Jake Klassen",
   "devDependencies": {
-    "@types/node": "^18.14.2",
-    "@types/yargs": "^17.0.19",
+    "@types/node": "^18.14.6",
+    "@types/yargs": "^17.0.22",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "bumpp": "^9.0.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
-    "rimraf": "^4.1.2",
+    "rimraf": "^4.3.0",
     "tsup": "^6.6.3",
     "tsx": "^3.12.3",
     "typescript": "^4.9.5",
-    "vitest": "^0.29.1"
+    "vitest": "^0.29.2"
   },
   "dependencies": {
     "esm": "^3.2.25",
