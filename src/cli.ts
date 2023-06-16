@@ -1,33 +1,25 @@
 import { oraPromise } from "ora";
-import type { Argv } from "yargs";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import pkg from "../package.json";
 import { crawl } from "./glob";
-import { CommonOptions } from "./types";
-
-function commonOptions(
-  args: Argv<Record<string, unknown>>,
-): Argv<CommonOptions> {
-  return args
-    .option("append", {
-      alias: "a",
-      type: "string",
-      default: "",
-      description: "Append string to variable output (e.g. '=')",
-    })
-    .option("cwd", {
-      alias: "c",
-      type: "string",
-      default: ".",
-      description: "Path to search",
-    });
-}
 
 const args = yargs(hideBin(process.argv))
   .scriptName("fdenv")
   .usage("$0 [args]")
-  .command("$0", "", commonOptions)
+  .option("append", {
+    alias: "a",
+    type: "string",
+    default: "",
+    description: "Append string to variable output (e.g. '=')",
+  })
+  .option("cwd", {
+    alias: "c",
+    type: "string",
+    default: ".",
+    description: "Path to search",
+  })
+  .command("$0", "")
   .showHelpOnFail(false)
   .version(pkg.version)
   .alias("h", "help")

@@ -10,6 +10,6 @@
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts", "scripts/*.ts", ".eslintrc.cjs"],
+  "include": ["src/**/*.ts", ".eslintrc.cjs"],
   "exclude": ["dist", "node_modules"]
 }
