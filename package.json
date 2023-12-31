@@ -41,24 +41,24 @@
   },
   "author": "Jake Klassen",
   "devDependencies": {
-    "@types/node": "^20.10.3",
+    "@types/node": "^20.10.6",
     "@types/yargs": "^17.0.32",
-    "@typescript-eslint/eslint-plugin": "^6.13.2",
-    "@typescript-eslint/parser": "^6.13.2",
-    "bumpp": "^9.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
+    "bumpp": "^9.2.1",
     "cross-env": "^7.0.3",
-    "eslint": "^8.55.0",
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.1",
-    "tsx": "^4.6.2",
+    "tsx": "^4.7.0",
     "typescript": "^5.3.3",
-    "vitest": "^1.0.1"
+    "vitest": "^1.1.1"
   },
   "dependencies": {
     "esm": "^3.2.25",
     "fast-glob": "^3.3.2",
-    "ora": "^7.0.1",
+    "ora": "^8.0.1",
     "picocolors": "^1.0.0",
     "yargs": "^17.7.2"
   }
